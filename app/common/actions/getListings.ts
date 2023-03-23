@@ -47,7 +47,6 @@ export default async function getListings(params: IListingsParams) {
     }
 
     if (bathroomCount) {
-      console.log({bathroomCount: +bathroomCount})
       query.bathroomCount = {
         gte: +bathroomCount
       }

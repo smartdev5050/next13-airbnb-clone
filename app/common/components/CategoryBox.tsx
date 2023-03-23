@@ -20,23 +20,24 @@ const CategoryBox: React.FC<CategoryBoxProps> = ({
   const params = useSearchParams();
 
   const handleClick = useCallback(() => {
-    const newQuery: any = {
-      locationValue: params?.get('locationValue'),
-      guestCount: params?.get('guestCount'),
-      roomCount: params?.get('roomCount'),
-      bathroomCount: params?.get('bathroomCount'),
-      startDate: params?.get('startDate'),
-      endDate: params?.get('endDate'),
+    let currentQuery = {};
+    
+    if (params) {
+      currentQuery = qs.parse(params.toString())
+    }
+
+    const updatedQuery: any = {
+      ...currentQuery,
       category: label
     }
 
     if (params?.get('category') === label) {
-      delete newQuery.category;
+      delete updatedQuery.category;
     }
 
     const url = qs.stringifyUrl({
       url: '/',
-      query: newQuery
+      query: updatedQuery
     }, { skipNull: true });
 
     router.push(url);

@@ -55,7 +55,14 @@ const SearchModal = () => {
       return onNext();
     }
 
+    let currentQuery = {};
+
+    if (params) {
+      currentQuery = qs.parse(params.toString())
+    }
+
     const updatedQuery: any = {
+      ...currentQuery,
       locationValue: location?.value,
       guestCount,
       roomCount,
@@ -72,16 +79,7 @@ const SearchModal = () => {
 
     const url = qs.stringifyUrl({
       url: '/',
-      query: {
-        locationValue: params?.get('locationValue'),
-        roomCount: params?.get('roomCount'),
-        guestCount: params?.get('guestCount'),
-        bathroomCount: params?.get('bathroomCount'),
-        category: params?.get('category'),
-        startDate: params?.get('startDate'),
-        endDate: params?.get('endDate'),
-        ...updatedQuery,
-      }
+      query: updatedQuery,
     }, { skipNull: true });
 
     setStep(STEPS.LOCATION);
@@ -170,7 +168,6 @@ const SearchModal = () => {
         <hr />
         <Counter 
           onChange={(value) => {
-            console.log({value})
             setBathroomCount(value)
           }}
           value={bathroomCount}
