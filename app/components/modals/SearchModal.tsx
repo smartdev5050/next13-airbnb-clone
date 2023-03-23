@@ -9,7 +9,7 @@ import { useRouter, useSearchParams } from 'next/navigation';
 
 import useSearchModal from "@/app/hooks/useSearchModal";
 
-import Modal from "../Modal";
+import Modal from "./Modal";
 import Calendar from "../inputs/Calendar";
 import Counter from "../inputs/Counter";
 import CountrySelect, { CountrySelectValue } from "../inputs/CountrySelect";
@@ -73,11 +73,13 @@ const SearchModal = () => {
     const url = qs.stringifyUrl({
       url: '/',
       query: {
-        locationValue: params.get('locationValue'),
-        roomCount: params.get('roomCount'),
-        guestCount: params.get('guestCount'),
-        bathroomCount: params.get('bathroomCount'),
-        category: params.get('category'),
+        locationValue: params?.get('locationValue'),
+        roomCount: params?.get('roomCount'),
+        guestCount: params?.get('guestCount'),
+        bathroomCount: params?.get('bathroomCount'),
+        category: params?.get('category'),
+        startDate: params?.get('startDate'),
+        endDate: params?.get('endDate'),
         ...updatedQuery,
       }
     }, { skipNull: true });

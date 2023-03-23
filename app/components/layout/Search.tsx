@@ -13,10 +13,10 @@ const Search = () => {
   const params = useSearchParams();
   const { getByValue } = useCountries();
 
-  const  locationValue = params.get('locationValue'); 
-  const  startDate = params.get('startDate');
-  const  endDate = params.get('endDate');
-  const  guestCount = params.get('guestCount');
+  const  locationValue = params?.get('locationValue'); 
+  const  startDate = params?.get('startDate');
+  const  endDate = params?.get('endDate');
+  const  guestCount = params?.get('guestCount');
 
   const locationLabel = useMemo(() => {
     if (locationValue) {
