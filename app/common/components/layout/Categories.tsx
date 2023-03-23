@@ -1,6 +1,6 @@
 'use client';
 
-import { useSearchParams } from 'next/navigation';
+import { usePathname, useSearchParams } from 'next/navigation';
 import { TbBeach, TbMountain, TbPool } from 'react-icons/tb';
 import { 
   GiBarn, 
@@ -102,6 +102,12 @@ export const categories = [
 const Categories = () => {
   const params = useSearchParams();
   const category = params?.get('category');
+  const pathname = usePathname();
+  const isMainPage = pathname === '/';
+
+  if (!isMainPage) {
+    return null;
+  }
 
   return (
     <Container>

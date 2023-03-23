@@ -5,8 +5,8 @@ import { useMemo } from 'react';
 import { BiSearch } from 'react-icons/bi';
 import { differenceInDays } from 'date-fns';
 
-import useSearchModal from '@/app/hooks/useSearchModal';
-import useCountries from '@/app/hooks/useCountries';
+import useSearchModal from '@/app/common/hooks/useSearchModal';
+import useCountries from '@/app/common/hooks/useCountries';
 
 const Search = () => {
   const searchModal = useSearchModal();

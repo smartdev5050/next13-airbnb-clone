@@ -4,19 +4,24 @@ import { useCallback, useState } from "react";
 import { AiOutlineMenu } from "react-icons/ai";
 import { signOut } from "next-auth/react";
 import { useRouter } from "next/navigation";
+import { User } from "@prisma/client";
 
-import useLoginModal from "@/app/hooks/useLoginModal";
-import useRegisterModal from "@/app/hooks/useRegisterModal";
-import useCurrentUser from "@/app/hooks/useCurrentUser";
-import useRentModal from "@/app/hooks/useRentModal";
+import useLoginModal from "@/app/common/hooks/useLoginModal";
+import useRegisterModal from "@/app/common/hooks/useRegisterModal";
+import useRentModal from "@/app/common/hooks/useRentModal";
 
 import MenuItem from "./MenuItem";
 import Avatar from "../Avatar";
 
-const UserMenu = () => {
+interface UserMenuProps {
+  currentUser?: User
+}
+
+const UserMenu: React.FC<UserMenuProps> = ({
+  currentUser
+}) => {
   const router = useRouter();
 
-  const { data: currentUser } = useCurrentUser();
   const loginModal = useLoginModal();
   const registerModal = useRegisterModal();
   const rentModal = useRentModal();

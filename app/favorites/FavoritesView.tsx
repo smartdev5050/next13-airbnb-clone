@@ -1,28 +1,27 @@
+import { Listing, User } from "@prisma/client";
+
+import Heading from "@/app/common/components/Heading";
 import Container from "@/app/common/components/layout/Container";
 import ListingCard from "@/app/common/components/listing/ListingCard";
-import EmptyState from "@/app/common/components/layout/EmptyState";
 
-import getListings, { IListingsParams } from "@/app/common/actions/getListings";
-import getCurrentUser from "@/app/common/actions/getCurrentUser";
+interface FavoritesViewProps {
+  listings: Listing[],
+  currentUser?: User
+}
 
-interface HomeProps {
-  searchParams: IListingsParams
-};
-
-const Home = async ({ searchParams }: HomeProps) => {
-  const listings = await getListings(searchParams);
-  const currentUser = await getCurrentUser();
-
-  if (listings.length === 0) {
-    return <EmptyState showReset />
-  }
-
+const FavoritesView: React.FC<FavoritesViewProps> = ({
+  listings,
+  currentUser
+}) => {
   return (
     <Container>
+      <Heading
+        title="Favorites"
+        subtitle="List of places you favorited!"
+      />
       <div 
         className="
-          pt-52
-          pb-20
+          mt-10
           grid 
           grid-cols-1 
           sm:grid-cols-2 
@@ -42,7 +41,7 @@ const Home = async ({ searchParams }: HomeProps) => {
         ))}
       </div>
     </Container>
-  )
+   );
 }
-
-export default Home;
+ 
+export default FavoritesView;

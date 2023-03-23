@@ -6,7 +6,7 @@ import { FieldValues, SubmitHandler, useForm } from 'react-hook-form';
 import dynamic from 'next/dynamic'
 import { useMemo, useState } from "react";
 
-import useRentModal from '@/app/hooks/useRentModal';
+import useRentModal from '@/app/common/hooks/useRentModal';
 // import useListings from '@/app/hooks/useListings';
 
 import Modal from "./Modal";

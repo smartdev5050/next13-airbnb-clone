@@ -1,18 +1,13 @@
-'use client';
-
-import Image from "next/image";
-import { usePathname, useRouter } from "next/navigation";
+import getCurrentUser from "@/app/common/actions/getCurrentUser";
 
 import Categories from "./Categories";
 import Container from "./Container";
+import Logo from "./Logo";
 import Search from "./Search";
 import UserMenu from "./UserMenu";
 
-const Navbar = () => {
-  const router = useRouter();
-  const pathname = usePathname();
-
-  const isMainPage = pathname === '/';
+const Navbar = async () => {
+  const currentUser = await getCurrentUser();
 
   return ( 
     <div className="fixed w-full bg-white z-10 shadow-sm">
@@ -33,20 +28,13 @@ const Navbar = () => {
             md:gap-0
           "
         >
-          <Image
-            onClick={() => router.push('/')}
-            className="hidden md:block cursor-pointer" 
-            src="/images/logo.png" 
-            height="100" 
-            width="100" 
-            alt="Logo" 
-          />
+          <Logo />
           <Search />
-          <UserMenu />
+          <UserMenu currentUser={currentUser} />
         </div>
       </Container>
     </div>
-    {isMainPage && <Categories />}
+    <Categories />
   </div>
   );
 }
