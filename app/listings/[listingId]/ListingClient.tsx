@@ -27,7 +27,7 @@ interface ListingClientProps {
   listing: Listing & {
     user: User;
   };
-  currentUser?: User;
+  currentUser?: User | null;
 }
 
 const ListingClient: React.FC<ListingClientProps> = ({
@@ -80,8 +80,8 @@ const ListingClient: React.FC<ListingClientProps> = ({
         // mutateReservations();
         router.push('/trips')
       })
-      .catch((error) => {
-        toast.error(error?.response?.data?.error);
+      .catch(() => {
+        toast.error('Something went wrong.');
       })
       .finally(() => {
         setIsLoading(false);

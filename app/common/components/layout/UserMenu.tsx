@@ -14,7 +14,7 @@ import MenuItem from "./MenuItem";
 import Avatar from "../Avatar";
 
 interface UserMenuProps {
-  currentUser?: User
+  currentUser?: User | null
 }
 
 const UserMenu: React.FC<UserMenuProps> = ({

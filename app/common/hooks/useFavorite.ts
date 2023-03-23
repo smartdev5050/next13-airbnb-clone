@@ -8,7 +8,7 @@ import useLoginModal from "./useLoginModal";
 
 interface IUseFavorite {
   listingId: string;
-  currentUser?: User
+  currentUser?: User | null
 }
 
 const useFavorite = ({ listingId, currentUser }: IUseFavorite) => {
@@ -42,7 +42,7 @@ const useFavorite = ({ listingId, currentUser }: IUseFavorite) => {
       router.refresh();
       toast.success('Success');
     } catch (error) {
-      toast.error('Something went wrong');
+      toast.error('Something went wrong.');
     }
   }, 
   [

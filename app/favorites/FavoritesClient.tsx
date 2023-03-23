@@ -6,7 +6,7 @@ import ListingCard from "@/app/common/components/listing/ListingCard";
 
 interface FavoritesClientProps {
   listings: Listing[],
-  currentUser?: User
+  currentUser?: User | null,
 }
 
 const FavoritesClient: React.FC<FavoritesClientProps> = ({
