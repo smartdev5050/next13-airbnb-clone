@@ -4,8 +4,7 @@ import dynamic from "next/dynamic";
 import { IconType } from "react-icons";
 
 import useCountries from "@/app/common/hooks/useCountries";
-
-import { User } from "@prisma/client";
+import { SafeUser } from "@/app/common/types";
 
 import Avatar from "../Avatar";
 import ListingCategory from "./ListingCategory";
@@ -15,7 +14,7 @@ const Map = dynamic(() => import('../Map'), {
 });
 
 interface ListingInfoProps {
-  user: User,
+  user: SafeUser,
   description: string;
   guestCount: number;
   roomCount: number;

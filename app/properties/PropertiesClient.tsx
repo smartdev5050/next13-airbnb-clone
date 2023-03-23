@@ -3,16 +3,17 @@
 import { toast } from "react-hot-toast";
 import axios from "axios";
 import { useCallback, useState } from "react";
-import { Listing, User } from "@prisma/client";
 import { useRouter } from "next/navigation";
+
+import { SafeListing, SafeUser } from "@/app/common/types";
 
 import Heading from "@/app/common/components/Heading";
 import Container from "@/app/common/components/layout/Container";
 import ListingCard from "@/app/common/components/listings/ListingCard";
 
 interface PropertiesClientProps {
-  listings: Listing[],
-  currentUser?: User | null,
+  listings: SafeListing[],
+  currentUser?: SafeUser | null,
 }
 
 const PropertiesClient: React.FC<PropertiesClientProps> = ({

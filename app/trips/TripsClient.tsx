@@ -3,16 +3,17 @@
 import { toast } from "react-hot-toast";
 import axios from "axios";
 import { useCallback, useState } from "react";
-import { Reservation, User } from "@prisma/client";
 import { useRouter } from "next/navigation";
+
+import { SafeReservation, SafeUser } from "@/app/common/types";
 
 import Heading from "@/app/common/components/Heading";
 import Container from "@/app/common/components/layout/Container";
 import ListingCard from "@/app/common/components/listings/ListingCard";
 
 interface TripsClientProps {
-  reservations: Reservation[],
-  currentUser?: User | null,
+  reservations: SafeReservation[],
+  currentUser?: SafeUser | null,
 }
 
 const TripsClient: React.FC<TripsClientProps> = ({

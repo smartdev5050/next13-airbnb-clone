@@ -4,17 +4,17 @@ import { useCallback, useState } from "react";
 import { AiOutlineMenu } from "react-icons/ai";
 import { signOut } from "next-auth/react";
 import { useRouter } from "next/navigation";
-import { User } from "@prisma/client";
 
 import useLoginModal from "@/app/common/hooks/useLoginModal";
 import useRegisterModal from "@/app/common/hooks/useRegisterModal";
 import useRentModal from "@/app/common/hooks/useRentModal";
+import { SafeUser } from "@/app/common/types";
 
 import MenuItem from "./MenuItem";
 import Avatar from "../Avatar";
 
 interface UserMenuProps {
-  currentUser?: User | null
+  currentUser?: SafeUser | null
 }
 
 const UserMenu: React.FC<UserMenuProps> = ({

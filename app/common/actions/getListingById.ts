@@ -17,7 +17,19 @@ export default async function getListingById(params: IParams) {
       }
     });
 
-    return listing;
+    if (!listing) {
+      return null;
+    }
+
+    return {
+      ...listing,
+      createdAt: listing.createdAt.toString(),
+      user: {
+        ...listing.user,
+        createdAt: listing.user.createdAt.toString(),
+        updatedAt: listing.user.updatedAt.toString(),
+      }
+    };
   } catch (error: any) {
     throw new Error(error);
   }
