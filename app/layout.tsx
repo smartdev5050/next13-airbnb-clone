@@ -33,7 +33,9 @@ export default function RootLayout({
         <RentModal />
         {/* @ts-expect-error Server Component */}
         <Navbar />
-        {children}
+        <div className="pb-20 pt-28">
+          {children}
+        </div>
       </body>
     </html>
   )
