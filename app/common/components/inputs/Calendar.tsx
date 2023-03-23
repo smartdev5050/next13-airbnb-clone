@@ -19,10 +19,6 @@ const DatePicker: React.FC<DatePickerProps> = ({
   return ( 
     <DateRange
       rangeColors={['#262626']}
-      classNames={{
-        calendarWrapper: 'text-[16px] w-full',
-        dayToday: 'text-neutral-800',
-      }}
       ranges={[value]}
       date={new Date()}
       onChange={onChange}
