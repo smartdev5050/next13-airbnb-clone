@@ -4,12 +4,12 @@ import Heading from "@/app/common/components/Heading";
 import Container from "@/app/common/components/layout/Container";
 import ListingCard from "@/app/common/components/listing/ListingCard";
 
-interface FavoritesViewProps {
+interface FavoritesClientProps {
   listings: Listing[],
   currentUser?: User
 }
 
-const FavoritesView: React.FC<FavoritesViewProps> = ({
+const FavoritesClient: React.FC<FavoritesClientProps> = ({
   listings,
   currentUser
 }) => {
@@ -44,4 +44,4 @@ const FavoritesView: React.FC<FavoritesViewProps> = ({
    );
 }
  
-export default FavoritesView;
+export default FavoritesClient;
