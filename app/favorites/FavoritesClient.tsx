@@ -2,7 +2,7 @@ import { Listing, User } from "@prisma/client";
 
 import Heading from "@/app/common/components/Heading";
 import Container from "@/app/common/components/layout/Container";
-import ListingCard from "@/app/common/components/listing/ListingCard";
+import ListingCard from "@/app/common/components/listings/ListingCard";
 
 interface FavoritesClientProps {
   listings: Listing[],

@@ -12,9 +12,9 @@ import useLoginModal from "@/app/common/hooks/useLoginModal";
 
 import Container from "@/app/common/components/layout/Container";
 import { categories } from "@/app/common/components/layout/Categories";
-import ListingHead from "@/app/common/components/listing/ListingHead";
-import ListingInfo from "@/app/common/components/listing/ListingInfo";
-import ListingReservation from "@/app/common/components/listing/ListingReservation";
+import ListingHead from "@/app/common/components/listings/ListingHead";
+import ListingInfo from "@/app/common/components/listings/ListingInfo";
+import ListingReservation from "@/app/common/components/listings/ListingReservation";
 
 const initialDateRange = {
   startDate: new Date(),

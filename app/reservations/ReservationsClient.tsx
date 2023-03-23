@@ -8,7 +8,7 @@ import { useRouter } from "next/navigation";
 
 import Heading from "@/app/common/components/Heading";
 import Container from "@/app/common/components/layout/Container";
-import ListingCard from "@/app/common/components/listing/ListingCard";
+import ListingCard from "@/app/common/components/listings/ListingCard";
 
 interface ReservationsClientProps {
   reservations: Reservation[],

@@ -1,5 +1,5 @@
 import Container from "@/app/common/components/layout/Container";
-import ListingCard from "@/app/common/components/listing/ListingCard";
+import ListingCard from "@/app/common/components/listings/ListingCard";
 import EmptyState from "@/app/common/components/layout/EmptyState";
 
 import getListings, { IListingsParams } from "@/app/common/actions/getListings";

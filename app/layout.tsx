@@ -5,7 +5,7 @@ import LoginModal from '@/app/common/components/modals/LoginModal';
 import RegisterModal from '@/app/common/components/modals/RegisterModal';
 import SearchModal from '@/app/common/components/modals/SearchModal';
 import RentModal from '@/app/common/components/modals/RentModal';
-import ToasterServer from '@/app/common/components/ToasterServer';
+import ToasterProvider from '@/app/common/providers/ToasterProvider';
 
 import './globals.css'
 
@@ -26,7 +26,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={font.className}>
-        <ToasterServer />
+        <ToasterProvider />
         <LoginModal />
         <RegisterModal />
         <SearchModal />
