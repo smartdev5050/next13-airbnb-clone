@@ -1,7 +1,8 @@
 import getCurrentUser from "@/app/actions/getCurrentUser";
 
 import Categories from "./Categories";
-import Container from "./Container";
+import ClientOnly from "../ClientOnly";
+import Container from "../Container";
 import Logo from "./Logo";
 import Search from "./Search";
 import UserMenu from "./UserMenu";
@@ -29,12 +30,16 @@ const Navbar = async () => {
           "
         >
           <Logo />
-          <Search />
-          <UserMenu currentUser={currentUser} />
+          <ClientOnly>
+            <Search />
+            <UserMenu currentUser={currentUser} />
+          </ClientOnly>
         </div>
       </Container>
     </div>
-    <Categories />
+    <ClientOnly>
+      <Categories />
+    </ClientOnly>
   </div>
   );
 }
