@@ -7,14 +7,14 @@ import { Range } from "react-date-range";
 import { useRouter } from "next/navigation";
 import { differenceInDays, eachDayOfInterval } from 'date-fns';
 
-import useLoginModal from "@/app/common/hooks/useLoginModal";
-import { SafeListing, SafeReservation, SafeUser } from "@/app/common/types";
+import useLoginModal from "@/app/hooks/useLoginModal";
+import { SafeListing, SafeReservation, SafeUser } from "@/app/types";
 
-import Container from "@/app/common/components/layout/Container";
-import { categories } from "@/app/common/components/layout/Categories";
-import ListingHead from "@/app/common/components/listings/ListingHead";
-import ListingInfo from "@/app/common/components/listings/ListingInfo";
-import ListingReservation from "@/app/common/components/listings/ListingReservation";
+import Container from "@/app/components/Container";
+import { categories } from "@/app/components/Categories";
+import ListingHead from "@/app/components/listings/ListingHead";
+import ListingInfo from "@/app/components/listings/ListingInfo";
+import ListingReservation from "@/app/components/listings/ListingReservation";
 
 const initialDateRange = {
   startDate: new Date(),
@@ -54,7 +54,8 @@ const ListingClient: React.FC<ListingClientProps> = ({
   }, [reservations]);
 
   const category = useMemo(() => {
-     return categories.find((items) => items.label === listing.category);
+     return categories.find((items) => 
+      items.label === listing.category);
   }, [listing.category]);
 
   const [isLoading, setIsLoading] = useState(false);

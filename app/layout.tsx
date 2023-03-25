@@ -1,11 +1,12 @@
 import { Nunito } from 'next/font/google'
 
-import Navbar from '@/app/common/components/layout/Navbar';
-import LoginModal from '@/app/common/components/modals/LoginModal';
-import RegisterModal from '@/app/common/components/modals/RegisterModal';
-import SearchModal from '@/app/common/components/modals/SearchModal';
-import RentModal from '@/app/common/components/modals/RentModal';
-import ToasterProvider from '@/app/common/providers/ToasterProvider';
+import Navbar from '@/app/components/Navbar';
+import LoginModal from '@/app/components/modals/LoginModal';
+import RegisterModal from '@/app/components/modals/RegisterModal';
+import SearchModal from '@/app/components/modals/SearchModal';
+import RentModal from '@/app/components/modals/RentModal';
+
+import ToasterProvider from '@/app/providers/ToasterProvider';
 
 import './globals.css'
 

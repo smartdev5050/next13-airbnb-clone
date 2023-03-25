@@ -1,9 +1,11 @@
-import Container from "@/app/common/components/layout/Container";
-import ListingCard from "@/app/common/components/listings/ListingCard";
-import EmptyState from "@/app/common/components/layout/EmptyState";
+import Container from "@/app/components/Container";
+import ListingCard from "@/app/components/listings/ListingCard";
+import EmptyState from "@/app/components/EmptyState";
 
-import getListings, { IListingsParams } from "@/app/common/actions/getListings";
-import getCurrentUser from "@/app/common/actions/getCurrentUser";
+import getListings, { 
+  IListingsParams
+} from "@/app/actions/getListings";
+import getCurrentUser from "@/app/actions/getCurrentUser";
 
 interface HomeProps {
   searchParams: IListingsParams
