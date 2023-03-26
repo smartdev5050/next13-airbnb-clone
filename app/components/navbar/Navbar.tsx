@@ -1,15 +1,18 @@
-import getCurrentUser from "@/app/actions/getCurrentUser";
+import { SafeUser } from "@/app/types";
 
 import Categories from "./Categories";
-import ClientOnly from "../ClientOnly";
 import Container from "../Container";
 import Logo from "./Logo";
 import Search from "./Search";
 import UserMenu from "./UserMenu";
 
-const Navbar = async () => {
-  const currentUser = await getCurrentUser();
+interface NavbarProps {
+  currentUser?: SafeUser | null;
+}
 
+const Navbar: React.FC<NavbarProps> = ({
+  currentUser,
+}) => {
   return ( 
     <div className="fixed w-full bg-white z-10 shadow-sm">
       <div
@@ -30,16 +33,12 @@ const Navbar = async () => {
           "
         >
           <Logo />
-          <ClientOnly>
-            <Search />
-            <UserMenu currentUser={currentUser} />
-          </ClientOnly>
+          <Search />
+          <UserMenu currentUser={currentUser} />
         </div>
       </Container>
     </div>
-    <ClientOnly>
-      <Categories />
-    </ClientOnly>
+    <Categories />
   </div>
   );
 }
