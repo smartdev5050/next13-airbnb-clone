@@ -21,7 +21,6 @@ Features:
 - Calendars with react-date-range
 - Page loading state
 - Page empty state
-- Custom 404 page
 - Booking / Reservation system
 - Guest reservation cancellation
 - Owner reservation cancellation
